@@ -11,7 +11,7 @@ function App() {
      <button onClick={()=>{
 
 const querySnapshotPromise = getDocs(collection(db, "users"));
-const docRef = doc(db, "users", "udi111");
+const docRef = doc(collection(db, "users"));
 
 querySnapshotPromise.then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
@@ -20,7 +20,7 @@ querySnapshotPromise.then((querySnapshot) => {
 })
 
 const data = {
-  name: "sasi"
+  name: "sasi2"
 };
 
 setDoc(docRef, data)
